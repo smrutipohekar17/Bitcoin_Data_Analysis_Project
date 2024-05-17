@@ -66,7 +66,7 @@ Bitcoin_Data_Analysis_Project/
 
 3. **Open the Jupyter Notebook**:
     ```sh
-    jupyter notebook notebooks/bitcoin_price_analysis.ipynb
+    jupyter notebook notebooks/Bitcoin_Data_Analysis.ipynb
     ```
 
 ## Data Description
