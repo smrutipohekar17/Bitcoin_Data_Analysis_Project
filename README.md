@@ -1,54 +1,137 @@
-### Bitcoin Price Analysis Project
+# Bitcoin Price Analysis Project
 
-#### Objective:
-The primary goal of this project is to perform a comprehensive analysis of Bitcoin price data from April 28, 2013, to July 31, 2017. The analysis includes data pre-processing, visualizations, and identifying patterns or trends over time. This helps understand Bitcoin's historical price movements and provides insights into its behavior in the market.
+## Overview
 
-#### Steps and Methods:
+This project focuses on the analysis of Bitcoin price data from April 28, 2013, to July 31, 2017. It includes data pre-processing, visualizations, and identifying patterns or trends over time. The objective is to understand Bitcoin's historical price movements and provide insights into its market behavior.
 
-1. **Data Loading and Initial Inspection**:
-    - **Libraries Used**: Pandas, Numpy, Matplotlib, Seaborn
-    - **Data Loading**: The data is loaded from a CSV file named 'bitcoin_price_Training - Training.csv'.
-    - **Initial Inspection**: Preview the first few rows of the dataset and inspect its structure.
+## Table of Contents
 
-2. **Data Pre-Processing**:
-    - **Data Types Conversion**: Convert the 'Date' column from an object to a datetime format to enable time-series analysis.
-    - **Check for Missing Values**: Ensure there are no missing values in the dataset.
-    - **Check for Duplicates**: Ensure there are no duplicate entries.
-    - **Sort Data**: Sort the data in chronological order (from oldest to most recent).
+- [Overview](#overview)
+- [Project Structure](#project-structure)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+- [Data Description](#data-description)
+- [Analysis Steps](#analysis-steps)
+  - [Data Loading and Inspection](#data-loading-and-inspection)
+  - [Data Pre-Processing](#data-pre-processing)
+  - [Basic Data Analysis](#basic-data-analysis)
+  - [Time Series Analysis](#time-series-analysis)
+  - [Log-Scale Analysis](#log-scale-analysis)
+  - [Resampling and Aggregation](#resampling-and-aggregation)
+  - [Daily Return Analysis](#daily-return-analysis)
+- [Visualizations](#visualizations)
+- [Conclusion](#conclusion)
+- [Contributing](#contributing)
+- [License](#license)
 
-3. **Basic Data Analysis**:
-    - **Summary Statistics**: Compute descriptive statistics (mean, standard deviation, min, max) for the price columns (Open, High, Low, Close).
-    - **Date Range**: Identify the range of dates the dataset covers (April 28, 2013, to July 31, 2017).
+## Project Structure
 
-4. **Time Series Analysis**:
-    - **Plotting Price Trends**: Visualize the 'Open', 'High', 'Low', and 'Close' prices over time using line plots.
-    - **Candle-stick Charts**: Create a sample candlestick chart using Plotly to visualize the price movements in a detailed manner.
+```
+Bitcoin_Data_Analysis_Project/
+│
+├── data/
+│   └── bitcoin_price_Training - Training.csv
+│
+├── notebooks/
+│   └── bitcoin_price_analysis.ipynb
+│
+├── visualizations/
+│   └── *.png
+│
+├── README.md
+│
+└── requirements.txt
+```
 
-5. **Log-Scale Analysis**:
-    - **Closing Price Analysis**: Plot the closing price on both a normal scale and a logarithmic scale to handle large value ranges effectively.
-    - **Identify Trends**: Analyze upward trends starting from 2016 and observe the absence of seasonality and outliers.
+## Getting Started
 
-6. **Resampling and Aggregation**:
-    - **Yearly Analysis**: Calculate and plot the average closing price on a yearly basis.
-    - **Quarterly Analysis**: Calculate and plot the average closing price on a quarterly basis.
-    - **Monthly Analysis**: Calculate and plot the average closing price on a monthly basis.
+### Prerequisites
 
-7. **Daily Return Analysis**:
-    - **Daily Stock Return Formula**: Calculate the daily return to understand day-to-day changes in closing prices.
+- Python 3.7+
+- Jupyter Notebook or Jupyter Lab
 
-#### Key Insights:
-- **Historical Price Movements**: Identify significant trends and patterns in the historical price data of Bitcoin.
-- **Data Visualization**: Effective use of visualizations to convey price trends, with tools like line plots and candlestick charts.
-- **Logarithmic Scaling**: Demonstrate the utility of log scales in handling datasets with wide-ranging values.
-- **Temporal Analysis**: Understand price trends on various time scales (yearly, quarterly, monthly).
+### Installation
 
-#### Tools and Techniques:
-- **Pandas**: For data manipulation and pre-processing.
-- **Numpy**: For numerical computations.
-- **Matplotlib and Seaborn**: For creating static visualizations.
-- **Plotly**: For interactive visualizations, particularly the candlestick chart.
-- **Datetime Conversion**: Ensuring the 'Date' column is in the correct format for time series analysis.
-- **Resampling**: Aggregating data on different time scales (yearly, quarterly, monthly).
+1. **Clone the repository**:
+    ```sh
+    git clone https://github.com/smrutipohekar17/Bitcoin_Data_Analysis_Project.git
+    cd Bitcoin_Data_Analysis_Project
+    ```
 
-#### Conclusion:
-This project serves as a comprehensive exercise in analyzing Bitcoin price data, employing various data processing techniques, visualizations, and temporal aggregations. It helps in deriving meaningful insights from historical data, which could be useful for understanding market trends and making informed decisions. As a data analyst, such a project demonstrates proficiency in handling time series data, data visualization, and extracting actionable insights from financial datasets.
+2. **Install the required libraries**:
+    ```sh
+    pip install -r requirements.txt
+    ```
+
+3. **Open the Jupyter Notebook**:
+    ```sh
+    jupyter notebook notebooks/bitcoin_price_analysis.ipynb
+    ```
+
+## Data Description
+
+The dataset used in this project is `bitcoin_price_Training - Training.csv`, which contains the following columns:
+
+- **Date**: The date of the record.
+- **Open**: The opening price of Bitcoin on the given date.
+- **High**: The highest price of Bitcoin on the given date.
+- **Low**: The lowest price of Bitcoin on the given date.
+- **Close**: The closing price of Bitcoin on the given date.
+
+## Analysis Steps
+
+### Data Loading and Inspection
+
+- Load the dataset using Pandas.
+- Preview the first few rows and inspect the structure of the dataset.
+
+### Data Pre-Processing
+
+- Convert the 'Date' column to datetime format.
+- Check for missing values and duplicates.
+- Sort the data in chronological order.
+
+### Basic Data Analysis
+
+- Compute descriptive statistics for price columns.
+- Identify the date range covered by the dataset.
+
+### Time Series Analysis
+
+- Visualize the 'Open', 'High', 'Low', and 'Close' prices over time using line plots.
+- Create a candlestick chart to visualize detailed price movements.
+
+### Log-Scale Analysis
+
+- Plot the closing price on a normal and logarithmic scale.
+- Analyze upward trends and observe the absence of seasonality and outliers.
+
+### Resampling and Aggregation
+
+- Calculate and plot the average closing price on a yearly, quarterly, and monthly basis.
+
+### Daily Return Analysis
+
+- Calculate the daily return to understand day-to-day changes in closing prices.
+
+## Visualizations
+
+The project includes various visualizations to understand Bitcoin's price trends:
+
+- Line plots of 'Open', 'High', 'Low', and 'Close' prices.
+- Candlestick chart using Plotly.
+- Yearly, quarterly, and monthly average closing prices.
+- Logarithmic scale analysis of closing prices.
+
+## Conclusion
+
+This project provides a comprehensive analysis of Bitcoin price data, demonstrating proficiency in handling time series data, creating insightful visualizations, and extracting meaningful patterns from financial datasets.
+
+## Contributing
+
+Contributions are welcome! Please create a pull request or open an issue to discuss your ideas.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
